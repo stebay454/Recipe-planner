@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import "tailwindcss";
+@theme {
+    --font-garamond: 'Cormorant Garamond', cursive;
+    --font-manrope: 'Manrope', sans-serif;
+}
