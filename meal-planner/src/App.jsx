@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import Browse from "./pages/Browse.jsx";
 import NavBar from "./components/NavBar.jsx";
 export default function App(){

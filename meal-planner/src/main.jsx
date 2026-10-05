@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css'
 import App from "./App.jsx";
 import Browse from "./pages/Browse.jsx";
@@ -18,11 +18,11 @@ const router = createBrowserRouter(
             element: <Browse />,
         },
         {
-            path: "/RecipeDetail:id",
+            path: "/RecipeDetail/:id",
             element: <RecipeDetail />,
         },
         {
-            path: "/Favorite/:id",
+            path: "/Favorite",
             element: <FavoritePage />,
         },
     ]
