@@ -17,12 +17,13 @@ export default function Browse(){
     function handleFilter(filterUrl){
         setUrl(filterUrl);
     }
-    if(loading) return <div>Loading...</div>;
+    if(loading) return <div className='mx-auto my-auto'>Loading...</div>;
     if(error) return <div>a network error happened!</div>;
     return (
-        <div>
-         <input  type='text' name='meal' onChange={handleChange} placeholder='Lazagna' />
-         <button onClick={handleClick} className="bg-[#c66a45] text-white py-2 px-4 rounded mt-auto">Search</button>
+        <div className='text-center mt-6 font-manrope'>
+         <input  type='text' name='meal' onChange={handleChange} placeholder='Lazagna' className='px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
+           focus:outline-none  focus:ring-1 focus:ring-[#6e7353]'/>
+         <button onClick={handleClick} className="bg-[#6e7353] text-white py-2 px-4 rounded mt-auto ml-6 cursor-pointer">Search</button>
             <CategoryFilter onSelect={handleFilter} />
             <RecipeCard meal={meal}/>
         </div>
