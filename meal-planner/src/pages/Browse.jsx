@@ -1,5 +1,7 @@
 import useFetch from "../hooks/useFetch.jsx";
 import {useState} from "react";
+import CategoryFilter from "../components/CategoryFilter.jsx";
+import RecipeCard from "../components/RecipeCard.jsx";
 
 export default function Browse(){
     const [input,setInput] = useState("");
@@ -12,18 +14,17 @@ export default function Browse(){
     function handleChange(e) {
         setInput(e.target.value);
     }
+    function handleFilter(filterUrl){
+        setUrl(filterUrl);
+    }
     if(loading) return <div>Loading...</div>;
     if(error) return <div>a network error happened!</div>;
     return (
         <div>
          <input  type='text' name='meal' onChange={handleChange} placeholder='Lazagna' />
-         <button onClick={handleClick}>Search</button>
-            {meal && meal.meals.map(food =>(
-                <div key={food.idMeal}>
-                    <img src={food.strMealThumb} alt='some food' />
-                    <p>{food.strMeal}</p>
-                </div>
-            ))}
+         <button onClick={handleClick} className="bg-[#c66a45] text-white py-2 px-4 rounded mt-auto">Search</button>
+            <CategoryFilter onSelect={handleFilter} />
+            <RecipeCard meal={meal}/>
         </div>
     );
 }
