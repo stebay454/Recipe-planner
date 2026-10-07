@@ -19,7 +19,7 @@ export default function IngredientList({meal}) {
            <p>INGREDIENTS</p>
            <ul>
                {meal && data.map(step => (
-                   <li key={step.ingredient}>{step.step}: {step.ingredient} - {step.measure}</li>
+                   <li key={step.ingredient}>*{step.ingredient} - {step.measure}</li>
                    )
                )}
            </ul>
