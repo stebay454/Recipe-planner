@@ -21,7 +21,7 @@ export default function Browse(){
         setUrl(filterUrl);
     }
     function handleRecipeClick(key){
-      navigate(`/RecipeDetail/${key}`);
+      navigate(`/recipe/${key}`);
     }
     if(loading) return <p className='text-center font-manrope mt-auto text-xl'>Loading...</p>;
     if(error) return <div>a network error happened!</div>;
