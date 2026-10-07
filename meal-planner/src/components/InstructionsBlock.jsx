@@ -1,7 +1,8 @@
-export default function InstructionsBlock() {
+export default function InstructionsBlock({meal}) {
     return (
-        <div>
-            <p>INSTRUCTIONS</p>
+        <div className='font-manrope'>
+            <p className='underline'>INSTRUCTIONS</p>
+            <p>{meal.strInstructions}</p>
         </div>
     );
 }

@@ -10,13 +10,12 @@ export default function IngredientList({meal}) {
              data.push({step:`step ${i}`,ingredient: ingredientKey, measure: measureKey});
          }
      }
-     console.log(data);
      return data;
     }
     const data = foodList();
     return(
        <div className='font-manrope'>
-           <p>INGREDIENTS</p>
+           <p className='underline'>INGREDIENTS</p>
            <ul>
                {meal && data.map(step => (
                    <li key={step.ingredient}>*{step.ingredient} - {step.measure}</li>

@@ -13,7 +13,7 @@ export default function RecipeCard({meal,handleRecipeClick}) {
     }
     const recipes = meal?.meals ? meal.meals : [meal];
     return (
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid max-sm:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {meal && recipes.map((food,index) => {
                 const isFavorite = favorites.some(fav => fav.idMeal === food.idMeal);
                 const uniqueKey = `${food.idMeal}-${index}`;
@@ -23,7 +23,7 @@ export default function RecipeCard({meal,handleRecipeClick}) {
                      onClick={() => handleRecipeClick(food.idMeal)}>
                     <img src={food.strMealThumb} alt='some food' className="rounded"/>
                     <p className="font-manrope my-4">{food.strMeal} </p>
-                    <button className=" bg-[#b8654a] hover:bg-[#9c553e] transition duration-700 ease text-white py-2
+                    <button className="text-sm lg:text-lg bg-yellow-600 hover:scale-[1.05] transition duration-700 ease text-white py-2
                      px-4 rounded mt-auto font-manrope cursor-pointer" onClick={(e) => handleFavoriteClick(e, food,isFavorite)}>
                         {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
                     </button>

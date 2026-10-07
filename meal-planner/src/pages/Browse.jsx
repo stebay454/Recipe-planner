@@ -29,7 +29,7 @@ export default function Browse(){
         <div className='text-center mt-6 font-manrope'>
          <input  type='text' name='meal' onChange={handleChange} placeholder='honey' className='px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
            focus:outline-none  focus:ring-1 focus:ring-[#6e7353]'/>
-         <button onClick={handleClick} className="bg-[#6e7353] text-white py-2 px-4 rounded mt-auto ml-6 cursor-pointer">Search</button>
+         <button onClick={handleClick} className="bg-[#6e7353] hover:scale-[1.05] transition duration-700 ease text-white py-2 px-4 rounded mt-auto ml-6 cursor-pointer">Search</button>
             <CategoryFilter onSelect={handleFilter} />
             <RecipeCard meal={meal} handleRecipeClick={handleRecipeClick}/>
         </div>
