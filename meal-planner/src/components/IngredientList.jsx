@@ -1,24 +1,22 @@
-export default function IngredientList({meal}) {
+export default function IngredientList({food}) {
     function foodList(){
         const data = [];
      for(let i=1; i<=20;i++){
-         let ingredientKey = meal[`strIngredient${i}`];
-         console.log(ingredientKey);
-         let measureKey = meal[`strMeasure${i}`];
-         console.log(measureKey);
+         let ingredientKey = food[`strIngredient${i}`];
+         let measureKey = food[`strMeasure${i}`];
          if(ingredientKey!==''&& ingredientKey!== null && ingredientKey!==undefined){
-             data.push({step:`step ${i}`,ingredient: ingredientKey, measure: measureKey});
+             data.push({step:`${i}`,ingredient: ingredientKey, measure: measureKey});
          }
      }
      return data;
     }
     const data = foodList();
     return(
-       <div className='font-manrope'>
-           <p className='underline'>INGREDIENTS</p>
-           <ul>
-               {meal && data.map(step => (
-                   <li key={step.ingredient}>*{step.ingredient} - {step.measure}</li>
+       <div className='w-full font-manrope flex flex-col items-center'>
+           <p className='underline mr-2'>INGREDIENTS</p>
+           <ul className='flex flex-col items-center'>
+               {food && data.map(ingredients => (
+                   <li key={ingredients.ingredient} className='mr-auto'>{ingredients.step}. {ingredients.ingredient} - {ingredients.measure}</li>
                    )
                )}
            </ul>

@@ -15,10 +15,14 @@ export default function FavoritePage() {
     return (
         <div className='w-full text-center py-6 px-6 font-manrope'>
             <div className='flex items-center my-6 justify-around'>
-                <FaArrowLeft className='mr-auto cursor-pointer text-xl' onClick={handleBackClick}/>
-                <p className='text-xl mr-auto'>YOUR FAVORITE MEALS</p>
+                <button onClick={handleBackClick} aria-label='navigate backward'><FaArrowLeft className='mr-auto cursor-pointer text-xl'/></button>
+                <p className='text-xl mx-auto'>YOUR FAVORITE MEALS</p>
             </div>
-          <RecipeCard meal={{meals : favorites}} handleRecipeClick={handleRecipeClick} />
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
+                {favorites.map(food => (
+                    <RecipeCard key={food.idMeal} food={food} handleRecipeClick={handleRecipeClick} />
+                ))}
+            </div>
         </div>
     );
 }
